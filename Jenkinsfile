@@ -6,18 +6,11 @@ pipeline{
                 }
               }
     stages{
-       /* stage('clean containers'){
-            steps{
-               // Stop all running containers
-               sh "docker stop \$(docker ps -q)"
-               // Remove all containers (including stopped ones)
-               sh "docker rm \$(docker ps -a -q)"
-                 }
-                                    } */
+       
          stage('create container'){
              steps{
                 sh "rm -rf"
-                 sh "docker run -d -p 80:80 --name container httpd"
+                 sh "docker run -dp 80:80 --name container httpd"
                   }
                                   }
      

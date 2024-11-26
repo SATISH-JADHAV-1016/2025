@@ -9,7 +9,7 @@ pipeline{
        
          stage('create container'){
              steps{
-                sh "rm -rf"
+                sh "docker rm -f container || true"
                  sh "docker run -dp 8001:80 --name container-3 httpd"
                   }
                                   }
